@@ -1,0 +1,104 @@
+configuration {
+  display-drun: "applications ::";
+  display-window: "windows ::";
+  display-emoji: "emojiselector ::";
+  drun-display-format: "{name}";
+  font: "JetBrainsMono Medium 11";
+  modi: "window,run,drun";
+  show-icons: false;
+}
+
+@theme "/dev/null"
+
+* {
+  /*
+  * pink
+
+  bg: #211014;
+  bg-alt: #85414f;
+  bg-selected: #5c2d37;
+  fg: #ffffff;
+  fg-alt: #dd6d83;
+  */
+
+  // blue
+  bg: #1e222b;
+  bg-alt: #434c5c;
+  bg-selected: #2b313a;
+  fg: #d4e2fa;
+  fg-alt: #8092b0;
+  fg-selected: #e6efff;
+
+  background-color: @bg;
+  text-color: @fg-alt;
+  
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  width: 30%;
+  border-width: 1px;
+  border-color: @bg-alt;
+}
+
+element {
+  padding: 8 8;
+  text-color: @fg-alt;
+}
+
+element selected {
+  text-color: @fg;
+  background-color: @bg-selected;
+  margin: 4px;
+  border-radius: 7.5px;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  vertical-align: 0.5;
+  highlight: bold underline;
+}
+
+element-icon {
+  size: 35;
+  background-color: inherit;
+  margin: 0 8 0 0;
+}
+
+entry {
+  background-color: @bg-alt;
+  padding: 12;
+  text-color: @fg;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+listview {
+  padding: 8 8;
+  background-color: @bg;
+  columns: 1;
+  lines: 8;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [inputbar, listview];
+  border: 1px;
+  border-radius: 5px;
+  border-color: @bg-alt;
+}
+
+prompt {
+  background-color: @bg-alt;
+  enabled: true;
+  padding: 12 0 0 12;
+  text-color: @fg;
+}
+
+/* vim: ft=sass

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+## Author : Aditya Shakya (adi1090x)
+## Mail : adi1090x@gmail.com
+## Github : @adi1090x
+## Reddit : @adi1090x
+
+rofi_command="rofi -m 0 -theme $HOME/.config/rofi/emojiselector.rasi"
+
+uptime=$(uptime -p | sed -e 's/up //g')
+
+# Options
+shutdown=" shutdown"
+reboot=" reboot"
+lock=" lock"
+suspend=" hibernate"
+logout=" log out"
+
+# Variable passed to rofi
+options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
+
+chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 0)"
+case $chosen in
+    $shutdown)
+        systemctl poweroff
+        notify-send -u low "shutting down..." "goodbye!"
+        ;;
+    $reboot)
+        systemctl reboot
+        notify-send -low "rebooting" "beep-boop"
+        ;;
+    $lock)
+        betterlockscreen -l dimblur
+        ;;
+    $suspend)
+        mpc -q pause
+        amixer set Master mute
+        systemctl suspend
+        ;;
+    $logout)
+        bspc quit
+        ;;
+esac
+
