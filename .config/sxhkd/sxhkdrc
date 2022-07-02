@@ -22,7 +22,7 @@ super + Return
 super + period
 	rofi -show emoji -theme ~/.config/rofi/emojiselector.rasi
 
-# open thunar
+# open thunar (or any other file manager)
 super + n
 	thunar
 
@@ -127,7 +127,7 @@ super + ctrl + shift + space
 
 # switch keyboard layout
 super + space
-	(setxkbmap -query | grep -q "layout:\s\+fi") && (setxkbmap -layout ru && dunstify -h string:x-dunst-stack-tag:layout "set keyboard layout to" "🇷🇺 ru" -i dialog-information-symbolic) || (setxkbmap -layout fi && dunstify -h string:x-dunst-stack-tag:layout "set keyboard layout to" "🇫🇮 fi" -i dialog-information-symbolic)
+	(setxkbmap -query | grep -q "layout:\s\+fi") && (setxkbmap -layout ru && dunstify -h string:x-dunst-stack-tag:layout "set keyboard layout to" "🇷🇺 ru") || (setxkbmap -layout fi && dunstify -h string:x-dunst-stack-tag:layout "set keyboard layout to" "🇫🇮 fi")
 
 #
 # move/resize
