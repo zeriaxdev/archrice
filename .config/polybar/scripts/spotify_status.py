@@ -117,6 +117,6 @@ try:
 
 except Exception as e:
     if isinstance(e, dbus.exceptions.DBusException):
-        print('No song playing...')
+        print('nothing playing.')
     else:
         print(e)
