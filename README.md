@@ -28,5 +28,3 @@
 - And change the path to your wallpaper
 
 ### absolutely non-proprietary!
-
-![screenshot](https://i.redd.it/6vlblhzn2f891.png)
